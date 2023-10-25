@@ -1,0 +1,219 @@
+@font-face {
+    font-family: Norse-Bold;
+    src: url(font/Norse-Bold.otf)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h1>p,
+h1+p {
+    margin-bottom: 20px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.inner-left-container {
+    width: 35%;
+    background: url(img/lions-resized.jpg) center center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.inner-right-container {
+    width: 65%;
+    display: flex;
+    align-items: center;
+}
+
+.logo-bar {
+    font-family: "Norse-Bold";
+    font-size: 90px;
+    height: 150px;
+    line-height: 120px;
+    background: rgba(0, 0, 0, .4);
+    color: white;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+}
+
+.logo-bar img {
+    height: 120px;
+}
+
+.img-info {
+    color: white;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.img-info a {
+    color: white;
+}
+
+.inner-right-content {
+    height: 75vh;
+    width: 100%;
+    padding: 30px;
+}
+
+.intro {
+    margin-bottom: 80px;
+}
+
+.form-element {
+    margin-bottom: 20px;
+}
+
+.form-element label {
+    display: block;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+}
+
+.form-element input {
+    width: 80%;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="email"] {
+    border: 1px solid #E5E7EB;
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: 2px 2px 2px silver;
+}
+
+input::placeholder {
+    color: silver;
+    font-size: 0.8rem;
+}
+
+input[type="text"]:required:valid,
+input[type="tel"]:required:valid,
+input[type="email"]:required:valid {
+    border: 1px solid green;
+}
+
+input[type="text"]:required:valid+span::before,
+input[type="tel"]:required:valid+span::before,
+input[type="email"]:required:valid+span::before {
+    content: "✓";
+    color: green;
+}
+
+input:optional:not(:placeholder-shown):valid {
+    border: 1px solid green;
+}
+
+input:optional:not(:placeholder-shown):valid+span::before {
+    content: "✓";
+    color: green;
+}
+
+#error {
+    margin-top: -15px;
+    height: 1rem;
+}
+
+.pw-info {
+    width: 80%;
+    margin-top: 4px;
+    color: silver;
+    font-size: 0.8rem;
+}
+
+.error::before {
+    content:"Passwords do not match!";
+    color: red;
+}
+
+input:required.red-border {
+    border: 1px solid red;
+}
+
+input:required.green-border {
+    border: 1px solid green;
+}
+
+input:required.green-border+span::before {
+    content: "✓";
+    color: green;
+}
+
+button {
+    background-color: #c69145;
+    color: white;
+    width: 240px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px silver;
+    margin: 20px 0 40px;
+}
+
+button:hover {
+    background-color: #c7a678;
+}
+
+button:active {
+    background-color: #c69145;
+}
+
+@media only screen and (min-width: 1080px) {
+    .form-elements-wrapper {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .form-element {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    form {
+        width: 60%;
+    }
+}

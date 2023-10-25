@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP: Sign-up form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-left-container">
+            <div class="logo-bar">
+                <img src="img/odin-lined.png" alt="odin logo">
+                <div>ODIN</div>
+            </div>
+            <div class="img-info">Photo by <a href="https://github.com/mrsmania/signup-form">mrsmania</a></div>
+        </div>
+        <div class="inner-right-container">
+            <div class="inner-right-content">
+                <div class="intro">
+                    <h1>
+                        <p>This is not a real online service! You know you need something like this in your life to help
+                            you realize your deepest dreams.<br>Sign up <em>now</em> to get started.</p>
+                        <p>You <em>know</em> you want to.</p>
+                    </h1>
+                </div>
+                <div class="form-section">
+                    <h1>
+                        <p>Let's do this!</p>
+                    </h1>
+                    <p>Required fields are followed by <span aria-label="required">*</span>.</p>
+                    <form action="" method="">
+                        <div class="form-elements-wrapper">
+                            <div class="form-element">
+                                <label for="firstname">
+                                    <span>First Name</span>
+                                    <span aria-label="required">*</span>
+                                </label>
+                                <input type="text" id="firstname" name="firstname" placeholder="e.g. John" required>
+                                <span></span>
+                            </div>
+                            <div class="form-element">
+                                <label for="lastname">
+                                    <span>Last Name</span>
+                                    <span aria-label="required">*</span>
+                                </label>
+                                <input type="text" id="lastname" name="lastname" placeholder="e.g. Doe" required>
+                                <span></span>
+                            </div>
+                            <div class="form-element">
+                                <label for="email">
+                                    <span>Email</span>
+                                    <span aria-label="required">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" placeholder="e.g. john.doe@top.com" required>
+                                <span></span>
+                            </div>
+                            <div class="form-element">
+                                <label for="phone">
+                                    <span>Phone Number</span>
+                                </label>
+                                <input type="tel" id="phone" name="phone" placeholder="e.g. 0765432109" pattern="[0-9]{10}">
+                                <span></span>
+                            </div>
+                            <div class="form-element">
+                                <label for="password">
+                                    <span>Password</span>
+                                    <span aria-label="required">*</span>
+                                </label>
+                                <input type="password" id="password1" name="password1" autocomplete="on" placeholder="enter your password" required>
+                                <span></span>
+                            </div>
+                            <div class="form-element">
+                                <label for="password">
+                                    <span>Confirm Password</span>
+                                    <span aria-label="required">*</span>
+                                </label>
+                                <input type="password" id="password2" name="password2" autocomplete="on" placeholder="repeat your password" required>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div id="pw-info"></div>
+                        <div id="error"></div>
+                        <button>Create Account</button>
+                    </form>
+                    <p>Already have an account? <a href="#">Log in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let password = document.getElementById('password1');
+        let password_confirmed = document.getElementById('password2');
+        let error = document.getElementById('error');
+
+        password.addEventListener('input', compare);
+        password_confirmed.addEventListener('input', compare);
+
+        function compare() {
+            if (password.value && password_confirmed.value) {
+                if (password.value != password_confirmed.value) {
+                    error.classList.add('error');
+                    password1.classList.add('red-border');
+                    password1.classList.remove('green-border');
+                    password2.classList.add('red-border');
+                    password2.classList.remove('green-border');
+                } else if (password.value == password_confirmed.value) {
+                    error.classList.remove('error');
+                    password1.classList.remove('red-border');
+                    password1.classList.add('green-border');
+                    password2.classList.remove('red-border');
+                    password2.classList.add('green-border');
+                }
+            } else {
+                error.classList.remove('error');
+                password1.classList.remove('red-border');
+                password2.classList.remove('red-border');
+                password1.classList.remove('green-border');
+                password2.classList.remove('green-border');
+            }
+        }
+    </script>
+</body>
+
+</html>
