@@ -4,6 +4,8 @@ Created as part of The Odin Project curriculum.
 
 ⭐ [Live Demo](https://mrsmania.github.io/signup-form/) 
 
+![App Preview](https://github.com/mrsmania/signup-form/blob/main/img/preview-forms.png)
+
 Note: The page is not mobile optimized. 
 
 ### Features
